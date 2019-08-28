@@ -40,7 +40,7 @@ export default class ValuesService {
     }
 
     get myGif() {
-        return _state.myGif.map(g => new Gif(g))  //making a new copy of Gif
+        return _state.myGif.map(g => new Gif(g))  // making a new copy of Gif
     }
 
     get ApiGif() {
@@ -50,4 +50,16 @@ export default class ValuesService {
     get CurrentGif() {
         return new Gif(_state.currentGif)
     }
+
+    // #region GifApi
+    getAllApi() { // getting all the api
+        _gifApi.get()
+            .then(res => {
+                _setState('apiGif', res.data.data)
+                console.log(res.data.data)
+            })
+            .catch(err => console.error(err))
+    }
+
+    // endregion
 }
