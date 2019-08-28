@@ -38,4 +38,16 @@ export default class ValuesService {
     addSubscriber(propName, fn) {
         _subscribers[propName].push(fn)
     }
+
+    get myGif() {
+        return _state.myGif.map(g => new Gif(g))  //making a new copy of Gif
+    }
+
+    get ApiGif() {
+        return _state.apiGif
+    }
+
+    get CurrentGif() {
+        return new Gif(_state.currentGif)
+    }
 }
