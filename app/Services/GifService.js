@@ -72,4 +72,23 @@ export default class ValuesService {
     }
 
     // endregion
+
+
+    // #region Sandbox
+    getMyGif() {
+        _sandBox.get()
+            .then(res => {
+                let data = res.data.data.map(g => new Gif(g))
+                _setState('myGif', data)
+                console.log(data)
+            })
+            .catch(err => console.error(err))
+    }
+
+
+
+    // endregion
+
+
+
 }

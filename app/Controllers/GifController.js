@@ -35,5 +35,6 @@ export default class GifController {
 
         //NOTE Retrieve data
         _gifService.getAllApi()
+        _gifService.getMyGif()
     }
 }
