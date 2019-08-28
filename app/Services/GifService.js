@@ -2,12 +2,17 @@ import Gif from "../Models/Gif.js";
 
 //Private
 let _state = {
+    myGif: [],
+    apiGif: [],
+    currentGif: {}
 
 }
 
 //NOTE methods to run when a given property in state changes
 let _subscribers = {
-
+    myGif: [],
+    apiGif: [],
+    currentGif: []
 }
 
 function _setState(propName, data) {
