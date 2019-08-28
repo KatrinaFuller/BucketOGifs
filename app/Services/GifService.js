@@ -39,7 +39,7 @@ export default class ValuesService {
         _subscribers[propName].push(fn)
     }
 
-    get myGif() {
+    get MyGif() {
         return _state.myGif.map(g => new Gif(g))  // making a new copy of Gif
     }
 

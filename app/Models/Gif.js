@@ -1,5 +1,6 @@
 export default class Gif {
     constructor(data) {
+        this._id = data._id
         this.title = data.title
         this.myUrl = data.myUrl || data.embed_url
     }
