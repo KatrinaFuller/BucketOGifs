@@ -7,7 +7,7 @@ function _drawApiGif() {
     let gif = _gifService.ApiGif
     let template = ''
     gif.forEach(g => {
-        template += `<div onclick="app.controllers.gifController.getOne('${}')"></li>`
+        template += `<div onclick="app.controllers.gifController.getOne('${g.url}')">${g.url}</li>`
     })
     document.getElementById('api-gif').innerHTML = template
 }

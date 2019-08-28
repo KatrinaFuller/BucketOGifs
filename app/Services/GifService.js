@@ -61,5 +61,15 @@ export default class ValuesService {
             .catch(err => console.error(err))
     }
 
+    getOne(url) {
+        _gifApi.get(url)
+            .then(res => {
+                let gif = new Gif(res.data)
+                _setState('currentGif', gif)
+                console.log(gif);
+            })
+            .catch(err => console.error(err))
+    }
+
     // endregion
 }
