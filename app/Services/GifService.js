@@ -1,4 +1,4 @@
-import Value from "../Models/Value.js";
+import Gif from "../Models/Gif.js";
 
 //Private
 let _state = {
