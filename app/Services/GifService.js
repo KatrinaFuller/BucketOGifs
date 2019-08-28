@@ -1,5 +1,15 @@
 import Gif from "../Models/Gif.js";
 
+// @ts-ignore
+let _gifApi = axios.create({
+    baseURL: 'http://api.giphy.com/v1/gifs/trending?api_key=AtAin7xuzHbRp5JwVA2BgNq5IlvEOBsV'
+})
+
+// @ts-ignore
+let _sandBox = axios.create({
+    baseURL: '//bcw-sandbox/herokuapp.com/api/Katrina/gifs'
+})
+
 //Private
 let _state = {
     myGif: [],
