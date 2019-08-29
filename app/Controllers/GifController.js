@@ -38,4 +38,17 @@ export default class GifController {
         _gifService.getAllApi()
         _gifService.getMyGif()
     }
+
+    // getOne(myUrl) {
+    //     _gifService.getOne(myUrl)
+    // }
+
+    // setOne(id) {
+    //     _gifService.setOne(id)
+    // }
+
+    captionGif() {
+        console.log("Button click worked!")
+        _gifService.captionGif()
+    }
 }

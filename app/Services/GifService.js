@@ -2,7 +2,7 @@ import Gif from "../Models/Gif.js";
 
 // @ts-ignore
 let _gifApi = axios.create({
-    baseURL: 'https://api.giphy.com/v1/gifs/trending?api_key=AtAin7xuzHbRp5JwVA2BgNq5IlvEOBsV'
+    baseURL: 'https://api.giphy.com/v1/gifs/trending?api_key=AtAin7xuzHbRp5JwVA2BgNq5IlvEOBsV&limit=1'
 })
 
 // @ts-ignore
@@ -33,11 +33,16 @@ function _setState(propName, data) {
 }
 
 //Public
-export default class ValuesService {
+export default class GifService {
     //NOTE adds the subscriber function to the array based on the property it is watching
     addSubscriber(propName, fn) {
         _subscribers[propName].push(fn)
     }
+
+    // setOne(id) {
+    //     let gif = _state.myGif.find(g => g._id == id)
+    //     _setState('currentGif', gif)
+    // }
 
     get MyGif() {
         return _state.myGif.map(g => new Gif(g))  // making a new copy of Gif
@@ -61,14 +66,18 @@ export default class ValuesService {
             .catch(err => console.error(err))
     }
 
-    getOne(url) {
-        _gifApi.get(url)
-            .then(res => {
-                let gif = new Gif(res.data)
-                _setState('currentGif', gif)
-                console.log(gif);
-            })
-            .catch(err => console.error(err))
+    // getOne(myUrl) {
+    //     _gifApi.get(myUrl)
+    //         .then(res => {
+    //             let gif = new Gif(res.data)
+    //             _setState('currentGif', gif)
+    //             console.log(gif);
+    //         })
+    //         .catch(err => console.error(err))
+    // }
+
+    captionGif() {
+        //click the button and it moves to the middle to add a caption
     }
 
     // endregion
